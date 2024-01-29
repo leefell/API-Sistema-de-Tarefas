@@ -23,6 +23,7 @@ namespace API_SistemaDeTarefas
                 );
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>(); // injecao de dependencia
+            builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>(); // injecao de dependencia
 
             var app = builder.Build();
 
