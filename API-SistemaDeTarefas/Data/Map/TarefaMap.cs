@@ -12,6 +12,9 @@ namespace API_SistemaDeTarefas.Data.Map
             builder.Property(x => x.Nome).IsRequired().HasMaxLength(255);
             builder.Property(x => x.Descricao).HasMaxLength(1500);
             builder.Property(x => x.Status).IsRequired();
+            builder.Property(x => x.UsuarioId);
+
+            builder.HasOne(x => x.Usuario); // cria uma ligacao do usuario com uma tarefa
         }
     }
 }
