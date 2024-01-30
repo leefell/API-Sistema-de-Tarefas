@@ -1,7 +1,11 @@
 using API_SistemaDeTarefas.Data;
+using API_SistemaDeTarefas.Integracao;
+using API_SistemaDeTarefas.Integracao.Refit;
 using API_SistemaDeTarefas.Repositorios;
 using API_SistemaDeTarefas.Repositorios.Interfaces;
+using API_SistemaDeTarefas.Integracao.Interfaces;
 using Microsoft.EntityFrameworkCore;
+using Refit;
 
 namespace API_SistemaDeTarefas
 {
@@ -24,6 +28,12 @@ namespace API_SistemaDeTarefas
 
             builder.Services.AddScoped<IUsuarioRepositorio, UsuarioRepositorio>(); // injecao de dependencia
             builder.Services.AddScoped<ITarefaRepositorio, TarefaRepositorio>(); // injecao de dependencia
+            builder.Services.AddScoped<IViaCepIntegracao, ViaCepIntegracao>();
+
+            builder.Services.AddRefitClient<IViaCepIntegracaoRefit>().ConfigureHttpClient(c =>
+            {
+                c.BaseAddress = new Uri("https://viacep.com.br"); // endereco base da API
+            });
 
             var app = builder.Build();
 
