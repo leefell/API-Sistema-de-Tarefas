@@ -1,10 +1,10 @@
 # API Sistema de Tarefas
 
-Esta é uma API CRUD básica para gerenciamento de tarefas e usuários, o objetivo desse projeto é exercitar meus conhecimentos.
+Esta é uma API CRUD básica para gerenciamento de tarefas, usuários e consulta de CEP, desenvolvida para praticar habilidades de desenvolvimento de APIs.
 
 ## Endpoints
 
-## Tarefa
+### Tarefa
 
 #### `GET /api/Tarefa`
 
@@ -26,7 +26,7 @@ Atualiza os detalhes de uma tarefa específica com o ID fornecido.
 
 Exclui uma tarefa específica com o ID fornecido.
 
-## Usuário
+### Usuário
 
 #### `GET /api/Usuario`
 
@@ -48,26 +48,20 @@ Atualiza os detalhes de um usuário específico com o ID fornecido.
 
 Exclui um usuário específico com o ID fornecido.
 
+### Consulta de CEP
+
+#### `GET /api/Cep/{cep}`
+
+Retorna os detalhes de um endereço correspondente ao CEP fornecido.
+
 ## Como Usar
 
-Para usar esta API, siga estas etapas:
+Este projeto foi desenvolvido com o objetivo de praticar habilidades de desenvolvimento de APIs e não está hospedado em nenhum lugar. Portanto, para utilizá-lo, será necessário clonar o repositório e executá-lo localmente.
+Ao executar o projeto, ele abrirá no Swagger UI, uma interface interativa que permite testar os endpoints da API diretamente do navegador.
 
-1. **Instalação**: Clone o repositório e execute as dependências necessárias.
+1. **Executando a API**: Após clonar o repositório, execute o projeto e navegue até o Swagger UI para testar os endpoints.
 
-2. **Connection String**: Configure a string de conexão com o banco de dados no arquivo `appsettings.json` ou outro arquivo de configuração apropriado.
+2. **Testando os Endpoints**: No Swagger UI, você encontrará todos os endpoints listados acima, incluindo o novo endpoint para consulta de CEP. Você pode clicar em cada endpoint para expandir e ver os detalhes, e em seguida, clicar em "Try it out" para testar o endpoint com diferentes parâmetros.
 
-    ```json
-    {
-      "ConnectionStrings": {
-        "DefaultConnection": "sua-string-de-conexao-aqui"
-      }
-    }
-    ```
+3. **Contribuindo**: Se você deseja contribuir para o projeto, sinta-se à vontade para abrir uma issue ou enviar uma pull request. Este projeto é destinado a práticas de desenvolvimento e aprendizado, e contribuições são bem-vindas!
 
-3. **Endpoints**: Acesse os endpoints conforme descrito acima para interagir com as tarefas e usuários.
-
-4. **Contribuindo**: Se você deseja contribuir para o projeto, siga as diretrizes de contribuição descritas no README.
-
-## Contribuindo
-
-Sinta-se à vontade para contribuir para este projeto! Se você encontrar problemas ou tiver sugestões de melhorias, abra uma issue ou envie uma pull request. Certifique-se de seguir as diretrizes de contribuição.
